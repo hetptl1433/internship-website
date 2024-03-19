@@ -9,7 +9,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
-    padding: 0;
+    padding: 0; 
     height: 100vh;
     font-weight: 500;
     color: #333; /* Font color */
