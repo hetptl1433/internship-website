@@ -9,7 +9,7 @@
 body {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     background: rgba(255, 255, 255, 0.8); /* Adjust the alpha value (0.8) to set the transparency */
-    background-image: url("../img/10001.jpg"); /* Replace 'path/to/your/background/image.jpg' with the path to your background image */
+    background-image: url("../img/10001.jpg") ; /* Replace 'path/to/your/background/image.jpg' with the path to your background image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -154,7 +154,7 @@ button {
     line-height: 1.5;
 }
 
-.cont.s--signup .img__text.m--up {
+.cont.s--signup .img__text. {
     -webkit-transform: translateX(520px);
     transform: translateX(520px);
 }
@@ -217,7 +217,7 @@ button {
     -webkit-transform: translateY(-72px);
     transform: translateY(-72px);
 }
-
+  
 .cont.s--signup .img__btn span.m--in {
     -webkit-transform: translateY(0);
     transform: translateY(0);
@@ -226,6 +226,7 @@ button {
 .cont.s--signup .img__btn span.m--up {
     -webkit-transform: translateY(72px);
     transform: translateY(72px);
+    
 }
 
 h2 {
@@ -275,7 +276,7 @@ input {
     color: #455a81;
 }
 .azz{
-    color: black;
+    color: black;button-container
 }
 
 .sign-in {
@@ -348,58 +349,6 @@ input {
     color: white;
 }
 
-
-/* For screens smaller than 768px (phones) */
-@media (max-width: 767.98px) {
-    .cont {
-        width: 100%;
-        border-radius: 0;
-        margin: 0 auto;
-    }
-
-    .form {
-        width: 100%;
-        padding: 30px 20px 0;
-    }
-
-    .sub-cont {
-        left: 0;
-        width: 100%;
-        padding-left: 0;
-    }
-
-    .img {
-        display: none;
-    }
-
-    .img__text {
-        top: 20px;
-    }
-
-    .button-container {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .submit {
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
-
-/* For screens between 768px and 991.98px (tablets) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .cont {
-        width: 80%;
-    }
-}
-
-/* For screens larger than 992px (desktops) */
-@media (min-width: 992px) {
-    .cont {
-        width: 900px;
-    }
-}
 
 
 
