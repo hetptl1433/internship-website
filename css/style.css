@@ -311,4 +311,7 @@ input[type=text]:placeholder {
   top: -9px;
       left: 130px;
 }
+#ftri{
+  position: relative;
+  left: 36% !important;
 }
