@@ -17,6 +17,7 @@ body {
     color: white;
 }
 
+
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 /* BASIC */
@@ -311,3 +312,18 @@ input[type=text]:placeholder {
   top: -9px;
       left: 130px;
 }
+/* 
+sign up pages */
+
+.form-group.row .col input {
+  margin-right: 5px; /* Adjust the spacing between the input fields */
+}
+
+.form-group.row .col input[type="password"] {
+  margin-right: 5px; /* Adjust the spacing between the input fields */
+}
+
+.pqr{
+  --bs-gutter-x: 0;
+}
+  
