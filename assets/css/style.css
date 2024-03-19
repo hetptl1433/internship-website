@@ -87,7 +87,14 @@ body {
     padding: 0px 15px;
   }
 }
-
+#ftri{
+  position: relative;
+  left: 36% !important;
+}
+#ctri{
+  position: relative;
+  left: 28% !important;
+}
 .large-container{
   max-width: 1450px;
   padding: 0px 15px;
@@ -9827,7 +9834,7 @@ div#mCSB_1_container{
   position: relative;
   display: block;
   overflow: hidden;
-  background: #252638;
+  background: #8689be29;
   border-radius: 5px;
 }
 
@@ -9835,6 +9842,7 @@ div#mCSB_1_container{
   width: 100%;
   border-radius: 5px;
   transition: all 500ms ease;
+  padding:25px;
 }
 
 .portfolio-block-two .inner-box:hover .image-box img{

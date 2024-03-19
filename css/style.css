@@ -312,6 +312,12 @@ input[type=text]:placeholder {
   top: -9px;
       left: 130px;
 }
+<<<<<<< HEAD
+#ftri{
+  position: relative;
+  left: 36% !important;
+}
+=======
 /* 
 sign up pages */
 
@@ -327,3 +333,4 @@ sign up pages */
   --bs-gutter-x: 0;
 }
   
+>>>>>>> 5adb2ae2e4f2e028883058cabb0b40374cb91917
