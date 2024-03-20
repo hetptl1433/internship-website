@@ -306,6 +306,13 @@ input[type=text]:placeholder {
 .signin{
     padding-top: 76px;
 }
+.kinjal{
+  max-width: 0.333333% !important;
+}
+.aa{
+  padding-left: 66px;
+  background: white;
+}
 
 .forgot{
   position: relative;
@@ -316,6 +323,8 @@ input[type=text]:placeholder {
 #ftri{
   position: relative;
   left: 36% !important;
+  position: relative;
+  bottom: 2px;
 }
 =======
 /* 
