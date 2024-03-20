@@ -331,6 +331,19 @@ input {
     cursor: pointer; /* Change cursor to pointer */
     transition: background-color 0.3s; /* Add transition effect */
 }
+.OTP {
+    margin-top: 40px;
+    position: relative;
+    right: 183px;
+    bottom: 10px;
+    background: #00750e; /* Blue background color */
+    color: white; /* Font color */
+    text-transform: uppercase;
+    border-radius: 20px; /* Remove border */
+    padding: 10px 20px; /* Adjust padding */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Add transition effect */
+}
 
 .submit:hover {
     background-color: #0056b3; /* Darker blue background color on hover */

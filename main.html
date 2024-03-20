@@ -45,22 +45,25 @@
 
             <div class="form-group center">
                 <label for="email">
-                    <span><b class="azz">Email</b></span>
-                    <input type="email" id="email" name="email" placeholder="xyz@gmail.com" required />
+                    <span><b class="azz">Phone number</b></span>
+                    <input type="email" id="email" name="email" placeholder="5252552" required />
                 </label>
             </div>
 
             <div class="form-group center">
                 <label for="password">
-                    <span><b class="azz">Password</b></span>
-                    <input type="password" id="password" name="password" placeholder="Unique pass" required />
+                    <span><b class="azz">OTP</b></span>
+                    <input type="password" id="password" name="password" placeholder="Already have OTP?" required />
                 </label>
             </div>
 
-            <p class="forgot-pass right"><a href="#">Forgot password?</a></p>
+            <p class="forgot-pass right"><a href="#">Retry?</a></p>
 
             <div class="button-container">
                 <input type="submit" class="submit" value="Login In">
+                <input type="submit" class="OTP" value="Request OTP">
+
+
             </div>
 
 
@@ -131,26 +134,16 @@
                         d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1" />
                 </svg>
                 <label>
-                    <span><b class="azz">Password</b></span>
-                    <input type="text" id="password" name="password " placeholder="Unique pass"
-                        pattern="^(?=.*\\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\\S{8,}$"
-                        title="Password must contain at least one number, one alphabet, one symbol, and be at least 8 characters long"
+                    <span><b class="azz">OTP</b></span>
+                    <input type="text" id="password" name="password " placeholder="ENTER OTP"
                         required>
                 </label>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1" />
-                </svg>
-                <label>
-                    <span><b class="azz">Confirm Password</span>
-                    <input type="text" id="Confirn password" placeholder="confirm pass" name="Confirm password"
-                        pattern="^(?=.*\\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\\S{8,}$"
-                        title="Password must contain at least one number, one alphabet, one symbol, and be at least 8 characters long"
-                        required>
-                </label>
+                
+              
                 <div class="button-container">
                     <input type="submit" value="Sign Up" class="submit">
+                <input type="submit" class="OTP" value="Request OTP">
+
                 </div>
 
             </div>

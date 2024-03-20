@@ -3940,7 +3940,20 @@ div#mCSB_1_container{
   width: 100%;
   border-radius: 50%;
 }
-
+.aa{
+  padding-top: 13px;
+  background: white;
+}
+.ctnn{
+  background: #f1f1f1;
+  padding-top: 20px;
+    padding-bottom: 20px;
+}
+.ccc{
+  height: 140px;
+  padding-top: 11px;
+}
+}
 .testimonial-block-one .inner-box .image-box:before{
   position: absolute;
   content: "\f10e";
@@ -3957,7 +3970,15 @@ div#mCSB_1_container{
   border: 3px solid #252638;
   z-index: 1;
 }
-
+#prof{
+  height: 41px;
+    padding-right: 15px;
+    width: 68px;
+}
+.qqq{
+  padding-left: 66px;
+  background: white;
+}
 .testimonial-block-one .inner-box .text{
   margin-bottom: 20px;
 }
@@ -13034,7 +13055,7 @@ div#mCSB_1_container{
 
 .contact-information{
   position: relative;
-  padding: 110px 0px 140px 0px;
+  padding: 48px 0px 140px 0px;
 }
 
 .contact-information .content_block_12 .content-box{
