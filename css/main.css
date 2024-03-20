@@ -20,7 +20,10 @@ body {
     /* You can add more styles here as needed */
 }
 
+.sss{
+    margin-left: 160px;
 
+}
 input,
 button {
     border: none;
@@ -240,6 +243,7 @@ label {
     width: 260px;
     margin: 25px auto 0;
     text-align: center;
+    
 }
 
 label span {
@@ -322,8 +326,8 @@ input {
 .submit {
     margin-top: 40px;
     margin-bottom: 20px;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 147px;
+    margin-right: 135px;
     background: #007bff; /* Blue background color */
     color: white; /* Font color */
     text-transform: uppercase;
@@ -332,9 +336,27 @@ input {
     cursor: pointer; /* Change cursor to pointer */
     transition: background-color 0.3s; /* Add transition effect */
 }
+.otp{
+    margin-top: 40px;
+    margin-bottom: 20px;
+ 
+    background: green; /* Blue background color */
+    color: white; /* Font color */
+    text-transform: uppercase;
+    border-radius: 20px; /* Remove border */
+    padding: 10px 20px; /* Adjust padding */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Add transition effect */
+    position: relative;
+    right: 114px;
+}
 
 .submit:hover {
     background-color: #0056b3; /* Darker blue background color on hover */
+}
+
+.otp:hover {
+    background-color: #023605; /* Darker blue background color on hover */
 }
 
 /*Forgot password?*/
@@ -347,6 +369,12 @@ input {
 
 .navbar b{
     color: white;
+}
+
+/* Your existing CSS code */
+
+.hidden {
+    display: none;
 }
 
 
