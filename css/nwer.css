@@ -1,0 +1,101 @@
+/* newregistration.htl-->css */
+/* General Styles */
+body {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.8);
+    background-image: url("../img/10001.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-weight: 500;
+    color: #333; /* Font color */
+}
+
+/* Navigation Bar Styles */
+.navbar b {
+    color: #fff; /* Font color */
+}
+
+/* Registration Form Section Styles */
+.abc {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Form background color */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Registration Form Section Styles */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ff4500; /* Updated label font color */
+}
+
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc; /* Input border color */
+    border-radius: 5px;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: #007bff; /* Button color */
+    color: #fff; /* Button font color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Button hover color */
+}
+
+/* Additional Styling */
+.azz {
+    color: #007bff; /* Additional font color */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.submit {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    background: #007bff;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
