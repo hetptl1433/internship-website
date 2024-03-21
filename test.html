@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entry Fees</title>
+<link href="assets/css/font-awesome-all.css" rel="stylesheet">
+<link href="assets/css/flaticon.css" rel="stylesheet">
+<link href="assets/css/owl.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+<link href="assets/css/animate.css" rel="stylesheet">
+<link href="assets/css/nice-select.css" rel="stylesheet">
+<link href="assets/css/color.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-VMP6KVq+gHv4iCGe7W7X1SzSaqQ3tkuNtefkd3kjWfLZsDH3a4uAn5+vgX8jS1uVsGH5lTJKMyayyu5Gz6f3fw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="css/book.css" rel="stylesheet"> 
+</head>
+
+<body>
+
+    <form>
+        <table id="pricingTable">
+            <tr>
+                <th>Sr.No.</th>
+                <th>Particulars</th>
+                <th>Without Walk-in Aviary</th>
+                <th>Count</th>
+                <th>With Walk-in Aviary</th>
+                <th>Count</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Children (Below age of 5)</td>
+                <td>5</td>
+                <td><input type="number" name="count_without_aviary_1" value="0"></td>
+                <td>5</td>
+                <td><input type="number" name="count_with_aviary_1" value="0"></td>
+                <td>0</td>
+            </tr>
+            <!-- Repeat the same structure for other rows -->
+            <tr>
+                <td colspan="6" style="text-align:right">Total</td>
+                <td id="total">0</td>
+            </tr>
+        </table>
+        <input type="button" value="Calculate Total" onclick="calculateTotal()">
+    </form>
+    
+    <script>
+        function calculateTotal() {
+            var total = 0;
+            var table = document.getElementById("pricingTable");
+            for (var i = 1; i < table.rows.length - 1; i++) {
+                var row = table.rows[i];
+                var countWithoutAviary = parseInt(row.cells[2].innerHTML);
+                var countWithAviary = parseInt(row.cells[4].innerHTML);
+                var count = parseInt(row.cells[3].querySelector("input").value) || 0;
+                var count2 = parseInt(row.cells[5].querySelector("input").value) || 0;
+                total += (countWithoutAviary * count) + (countWithAviary * count2);
+            }
+            document.getElementById("total").innerHTML = total;
+        }
+    </script>
+    
+
+<script>
+    // Function to calculate and update final value
+    function updateFinal() {
+        let total = 0;
+        for (let i = 1; i <= 6; i++) {
+            const countWithout = parseInt(document.getElementsByName("count_without_aviary_" + i)[0].value);
+            const countWith = parseInt(document.getElementsByName("count_with_aviary_" + i)[0].value);
+            const withoutFee = parseInt(document.getElementsByTagName("td")[i * 6 + 1].innerText);
+            const withFee = parseInt(document.getElementsByTagName("td")[i * 6 + 3].innerText);
+            const finalValue = (countWithout * withoutFee) + (countWith * withFee);
+            document.getElementById("final_" + i).innerText = finalValue;
+            total += finalValue;
+        }
+        document.getElementById("total").innerText = total;
+    }
+
+    // Add event listeners to inputs for dynamic calculation
+    const inputs = document.querySelectorAll('input[type="number"]');
+    inputs.forEach(input => {
+        input.addEventListener('input', updateFinal);
+    });
+</script>
+
+</body>
+</html>

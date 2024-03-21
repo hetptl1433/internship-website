@@ -158,45 +158,93 @@
                                     <th>Sr.No.</th>
                                     <th>Particulars</th>
                                     <th>Without Walk-in Aviary</th>
+                                    <th>Count</th>
                                     <th>With Walk-in Aviary</th>
+                                    <th>Count</th>
+                                    <th>Total</th>
                                 </tr>
                                 <tr>
                                     <td>1</td>
                                     <td>Children (Below age of 5)</td>
-                                    <td>Free</td>
-                                    <td>Free</td>
+                                    <td>0</td>
+                                    <td><input type="number" name="count_without_aviary_1" value="0"></td>
+                                    <td>0</td>
+                                    <td><input type="number" name="count_with_aviary_1" value="0"></td>
+                                    <td>0</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>Children (Below age of 12)</td>
                                     <td>20</td>
+                                    <td><input type="number" name="count_without_aviary_2" value="0"></td>
                                     <td>50</td>
+                                    <td><input type="number" name="count_with_aviary_2" value="0"></td>
+                                    <td>0</td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>Adults (Above age of 12)</td>
                                     <td>30</td>
+                                    <td><input type="number" name="count_without_aviary_3" value="0"></td>
                                     <td>80</td>
+                                    <td><input type="number" name="count_with_aviary_3" value="0"></td>
+                                    <td>0</td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
                                     <td>Camera Fees</td>
                                     <td>100</td>
+                                    <td><input type="number" name="count_without_aviary_4" value="0"></td>
                                     <td>100</td>
+                                    <td><input type="number" name="count_with_aviary_4" value="0"></td>
+                                    <td>0</td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
                                     <td>Video Camera Fees</td>
                                     <td>150</td>
+                                    <td><input type="number" name="count_without_aviary_5" value="0"></td>
                                     <td>150</td>
+                                    <td><input type="number" name="count_with_aviary_5" value="0"></td>
+                                    <td>0</td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
                                     <td>For Educational Institute</td>
                                     <td>10</td>
+                                    <td><input type="number" name="count_without_aviary_6" value="0"></td>
                                     <td>30</td>
+                                    <td><input type="number" name="count_with_aviary_6" value="0"></td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" style="text-align:right">ALL</td>
+                                    <td id="total">0</td>
                                 </tr>
                             </table>
+                            
+                            <script>
+                                // Function to calculate and update total
+                                function updateTotal() {
+                                    let total = 0;
+                                    for (let i = 1; i <= 6; i++) {
+                                        const countWithout = parseInt(document.getElementsByName("count_without_aviary_" + i)[0].value);
+                                        const countWith = parseInt(document.getElementsByName("count_with_aviary_" + i)[0].value);
+                                        const withoutFee = i <= 3 ? 0 : parseInt(document.getElementsByTagName("td")[i * 6 + 1].innerText);
+                                        const withFee = i <= 3 ? 0 : parseInt(document.getElementsByTagName("td")[i * 6 + 3].innerText);
+                                        total += withoutFee * countWithout + withFee * countWith;
+                                    }
+                                    document.getElementById("total").innerText = total;
+                                }
+                            
+                                // Add event listeners to inputs for dynamic calculation
+                                const inputs = document.querySelectorAll('input[type="number"]');
+                                inputs.forEach(input => {
+                                    input.addEventListener('input', updateTotal);
+                                });
+                            </script>
+                            
+                            
                         </div>
                         <div class="container d-flex justify-content-center">
                             <h3 ><b>Zoo timing</b></h3>
