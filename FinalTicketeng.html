@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Total Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link href="assets/css/font-awesome-all.css" rel="stylesheet">
+    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/css/owl.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/nice-select.css" rel="stylesheet">
+    <link href="assets/css/color.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-VMP6KVq+gHv4iCGe7W7X1SzSaqQ3tkuNtefkd3kjWfLZsDH3a4uAn5+vgX8jS1uVsGH5lTJKMyayyu5Gz6f3fw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/book.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <script>
+        function calculateTotal() {
+            var rows = document.querySelectorAll('table tr:not(:first-child):not(:last-child)');
+            var total1 = 0;
+            var total2 = 0;
+            
+            rows.forEach(function(row) {
+                var price1 = parseFloat(row.cells[2].textContent);
+                var count1Input = row.cells[3].querySelector('input');
+                var count1 = parseInt(count1Input.value);
+                if (count1 < 0) {
+                    count1Input.value = 0;
+                    count1 = 0;
+                }
+                
+                var price2 = parseFloat(row.cells[4].textContent);
+                var count2Input = row.cells[5].querySelector('input');
+                var count2 = parseInt(count2Input.value);
+                if (count2 < 0) {
+                    count2Input.value = 0;
+                    count2 = 0;
+                }
+                
+                total1 += price1 * count1;
+                total2 += price2 * count2;
+    
+                // Calculate 'sum' value for each row
+                var sum = (price1 * count1) + (price2 * count2); // 'sum' is the sum of two products
+                row.cells[6].textContent = sum; // Update the 'sum' cell with the calculated value
+            });
+    
+            document.getElementById('total1').textContent = total1;
+            document.getElementById('total2').textContent = total2;
+            document.getElementById('finalTotal').textContent = total1 + total2;
+        }
+    </script> -->
+  <script>
+    function calculateTotal() {
+        var rows = document.querySelectorAll('table tr:not(:first-child):not(:last-child)');
+        var total1 = 0;
+        var total2 = 0;
+
+        rows.forEach(function(row) {
+            var price1 = parseFloat(row.cells[2].textContent);
+            var count1Input = row.cells[3].querySelector('input');
+            var count1 = parseInt(count1Input.value);
+            if (count1 < 0 || count1 > 10 || isNaN(count1)) { // Added validation for count1
+                count1Input.value = 0;
+                count1 = 0;
+            }
+
+            var price2 = parseFloat(row.cells[4].textContent);
+            var count2Input = row.cells[5].querySelector('input');
+            var count2 = parseInt(count2Input.value);
+            if (count2 < 0 || count2 > 10 || isNaN(count2)) { // Added validation for count2
+                count2Input.value = 0;
+                count2 = 0;
+            }
+
+            total1 += price1 * count1;
+            total2 += price2 * count2;
+
+            // Calculate 'sum' value for each row
+            var sum = (price1 * count1) + (price2 * count2); // 'sum' is the sum of two products
+            row.cells[6].textContent = sum; // Update the 'sum' cell with the calculated value
+        });
+
+        document.getElementById('total1').textContent = total1;
+        document.getElementById('total2').textContent = total2;
+        document.getElementById('finalTotal').textContent = total1 + total2;
+    }
+
+    // Set default values and attach event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+        var countInputs = document.querySelectorAll('input[type="number"]');
+        countInputs.forEach(function(input) {
+            input.addEventListener('change', function() {
+                if (input.value === "" || parseInt(input.value) < 0 || parseInt(input.value) > 10) {
+                    input.value = 0;
+                }
+                calculateTotal();
+            });
+        });
+    });
+</script>
+  
+    
+    
+</head>
+<body>
+    <div class="boxed_wrapper">
+        <!-- main-header -->
+        <header class="main-header style-one">
+            <!-- header-lower -->
+            <div class="header-lower">
+                <div class=" auto-container ">
+                    <div class="outer-box clearfix">
+                        <div class="logo-box pull-left">
+                            <figure class="logo"><a href="index-2.html"><img src="img/vmc-logo.png" alt=""></a></figure>
+                            <p><b>Vadodara Municipal Corporation</b><p>
+                        </div>
+                        <div class="menu-area clearfix pull-right">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler">
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                            </div>
+                            <div class="menu-right-content clearfix">
+                                <div class="language-box">
+                                    <span class="text"><img id="prof" src="img/profile.jpg"></img>Het Patel</span>
+                                    <ul class="language-list clearfix">
+                                        <li><a href="index-2.html">Profile</a></li>
+                                        <li><a href="index-2.html">Log out</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- main-header end -->
+
+        <!-- Content from ruff.html -->
+        <!-- Page Title -->
+        <div class="container aa">
+            <div class="row">
+                <div class=" col-md-1">
+                    <button class="qqq"> <i class="fas fa-arrow-left"></i></button>
+                </div>
+                <div class="col-md-5 kinjal">
+                    <p>Home/Ticketing / Online Zoo Services</p>
+                </div>
+            </div>
+        </div>
+        <!-- contact-information -->
+        <section class="contact-information">
+            <div class="auto-container qsq">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-6 col-sm-12 content-column">
+                        <!-- Your content here -->
+                        <div>
+                            <table>
+                                <tr>
+                                    <th>Sr.No.</th>
+                                    <th>Particulars</th>
+                                    <th>Without Walk-in Aviary</th>
+                                    <th>Count1</th>
+                                    <th>With Walk-in Aviary</th>
+                                    <th>Count2</th>
+                                    <th>sum</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Children (Below age of 5)</td>
+                                    <td>0</td>
+                                    <td><input type="number" name="count_without_aviary_1" value="0" oninput="calculateTotal()"></td>
+                                    <td>0</td>
+                                    <td><input type="number" name="count_with_aviary_1" value="0" oninput="calculateTotal()"></td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Children (Below age of 12)</td>
+                                    <td>20</td>
+                                    <td><input type="number" name="count_without_aviary_2" value="0" oninput="calculateTotal()"></td>
+                                    <td>50</td>
+                                    <td><input type="number" name="count_with_aviary_2" value="0" oninput="calculateTotal()"></td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Adults (Above age of 12)</td>
+                                    <td>30</td>
+                                    <td><input type="number" name="count_without_aviary_3" value="0" oninput="calculateTotal()"></td>
+                                    <td>80</td>
+                                    <td><input type="number" name="count_with_aviary_3" value="0" oninput="calculateTotal()"></td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Camera Fees</td>
+                                    <td>100</td>
+                                    <td><input type="number" name="count_without_aviary_4" value="0" oninput="calculateTotal()"></td>
+                                    <td>100</td>
+                                    <td><input type="number" name="count_with_aviary_4" value="0" oninput="calculateTotal()"></td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Video Camera Fees</td>
+                                    <td>150</td>
+                                    <td><input type="number" name="count_without_aviary_5" value="0" oninput="calculateTotal()"></td>
+                                    <td>150</td>
+                                    <td><input type="number" name="count_with_aviary_5" value="0" oninput="calculateTotal()"></td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>For Educational Institute</td>
+                                    <td>10</td>
+                                    <td><input type="number" name="count_without_aviary_6" value="0" oninput="calculateTotal()"></td>
+                                    <td>30</td>
+                                    <td><input type="number" name="count_with_aviary_6" value="0" oninput="calculateTotal()"></td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align:right">Total</td>
+                                    <td id="total1">0</td>
+                                    <td colspan="2" style="text-align:right">Total</td>
+                                    <td id="total2">0</td>
+                                    <td id="finalTotal">0</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="container d-flex justify-content-center">
+                            <h3 ><b>Zoo timing</b></h3>
+                        </div>
+                        <div>
+                           <div class="container">
+                            <img src="img/Screenshot 2024-03-21 130703.png" alt="">
+                           </div>
+                        </div>
+                        <div class="col d-flex justify-content-end vvv">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                Proceed 
+                              </button>
+                              
+                              <!-- Modal -->
+                              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      ...
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                      <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- contact-information end -->
+    </div>
+
+    <!-- jequery plugins -->
+    <!-- <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/popper
+.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/validation.js"></script>
+    <script src="assets/js/jquery.fancybox.js"></script>
+    <script src="assets/js/appear.js"></script>
+    <script src="assets/js/scrollbar.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/nav-tool.js"></script>
+    <script src="assets/js/bxslider.js"></script> -->
+
+    <!-- map script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CE0deH3Jhj6GN4YvdCFZS7DpbXexzGU"></script>
+    <script src="assets/js/gmaps.js"></script>
+    <script src="assets/js/map-helper.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- main-js -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
