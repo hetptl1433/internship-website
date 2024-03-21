@@ -8,7 +8,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
 <title>VMC | Zoo tickets</title>
+<script>
+    function calculateTotal() {
+        // Get all rows except the header and total row
+        var rows = document.querySelectorAll('table tr:not(:first-child):not(:last-child)');
+        var total1 = 0;
+        var total2 = 0;
+        
+        // Loop through each row
+        rows.forEach(function(row) {
+            // Get the price and count values for Without Walk-in Aviary
+            var price1 = parseFloat(row.cells[2].textContent);
+            var count1 = parseInt(row.cells[3].querySelector('input').value);
+            
+            // Get the price and count values for With Walk-in Aviary
+            var price2 = parseFloat(row.cells[4].textContent);
+            var count2 = parseInt(row.cells[5].querySelector('input').value);
+            
+            // Calculate subtotal for Without Walk-in Aviary and add to total1
+            total1 += price1 * count1;
 
+            // Calculate subtotal for With Walk-in Aviary and add to total2
+            total2 += price2 * count2;
+        });
+
+        // Update the total cell for Without Walk-in Aviary
+        document.getElementById('total1').textContent = total1;
+
+        // Update the total cell for With Walk-in Aviary
+        document.getElementById('total2').textContent = total2;
+        
+        // Update the final total
+        document.getElementById('finalTotal').textContent = total1 + total2;
+    }
+
+    function calculateTotal() {
+        var rows = document.querySelectorAll('table tr:not(:first-child):not(:last-child)');
+        var total1 = 0;
+        var total2 = 0;
+
+        rows.forEach(function(row) {
+            var price1 = parseFloat(row.cells[2].textContent);
+            var count1 = parseInt(row.cells[3].querySelector('input').value);
+            var price2 = parseFloat(row.cells[4].textContent);
+            var count2 = parseInt(row.cells[5].querySelector('input').value);
+
+            total1 += price1 * count1;
+            total2 += price2 * count2;
+
+            // Calculate 'sum' value for each row
+            var sum = (price1 * count1) + (price2 * count2); // 'sum' is the sum of two products
+            row.cells[6].textContent = sum; // Update the 'sum' cell with the calculated value
+        });
+
+        document.getElementById('total1').textContent = total1;
+        document.getElementById('total2').textContent = total2;
+        document.getElementById('finalTotal').textContent = total1 + total2;
+    }
+</script>
 <!-- Fav Icon -->
 <link rel="icon" href="img/vmc-logo.png" type="image/x-icon">
 
@@ -158,68 +215,71 @@
                                     <th>Sr.No.</th>
                                     <th>Particulars</th>
                                     <th>Without Walk-in Aviary</th>
-                                    <th>Count</th>
+                                    <th>Count1</th>
                                     <th>With Walk-in Aviary</th>
-                                    <th>Count</th>
-                                    <th>Total</th>
+                                    <th>Count2</th>
+                                    <th>sum</th>
                                 </tr>
                                 <tr>
                                     <td>1</td>
                                     <td>Children (Below age of 5)</td>
                                     <td>0</td>
-                                    <td><input type="number" name="count_without_aviary_1" value="0"></td>
+                                    <td><input type="number" name="count_without_aviary_1" value="0" oninput="calculateTotal()"></td>
                                     <td>0</td>
-                                    <td><input type="number" name="count_with_aviary_1" value="0"></td>
+                                    <td><input type="number" name="count_with_aviary_1" value="0" oninput="calculateTotal()"></td>
                                     <td>0</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>Children (Below age of 12)</td>
                                     <td>20</td>
-                                    <td><input type="number" name="count_without_aviary_2" value="0"></td>
+                                    <td><input type="number" name="count_without_aviary_2" value="0" oninput="calculateTotal()"></td>
                                     <td>50</td>
-                                    <td><input type="number" name="count_with_aviary_2" value="0"></td>
+                                    <td><input type="number" name="count_with_aviary_2" value="0" oninput="calculateTotal()"></td>
                                     <td>0</td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>Adults (Above age of 12)</td>
                                     <td>30</td>
-                                    <td><input type="number" name="count_without_aviary_3" value="0"></td>
+                                    <td><input type="number" name="count_without_aviary_3" value="0" oninput="calculateTotal()"></td>
                                     <td>80</td>
-                                    <td><input type="number" name="count_with_aviary_3" value="0"></td>
+                                    <td><input type="number" name="count_with_aviary_3" value="0" oninput="calculateTotal()"></td>
                                     <td>0</td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
                                     <td>Camera Fees</td>
                                     <td>100</td>
-                                    <td><input type="number" name="count_without_aviary_4" value="0"></td>
+                                    <td><input type="number" name="count_without_aviary_4" value="0" oninput="calculateTotal()"></td>
                                     <td>100</td>
-                                    <td><input type="number" name="count_with_aviary_4" value="0"></td>
+                                    <td><input type="number" name="count_with_aviary_4" value="0" oninput="calculateTotal()"></td>
                                     <td>0</td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
                                     <td>Video Camera Fees</td>
                                     <td>150</td>
-                                    <td><input type="number" name="count_without_aviary_5" value="0"></td>
+                                    <td><input type="number" name="count_without_aviary_5" value="0" oninput="calculateTotal()"></td>
                                     <td>150</td>
-                                    <td><input type="number" name="count_with_aviary_5" value="0"></td>
+                                    <td><input type="number" name="count_with_aviary_5" value="0" oninput="calculateTotal()"></td>
                                     <td>0</td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
                                     <td>For Educational Institute</td>
                                     <td>10</td>
-                                    <td><input type="number" name="count_without_aviary_6" value="0"></td>
+                                    <td><input type="number" name="count_without_aviary_6" value="0" oninput="calculateTotal()"></td>
                                     <td>30</td>
-                                    <td><input type="number" name="count_with_aviary_6" value="0"></td>
+                                    <td><input type="number" name="count_with_aviary_6" value="0" oninput="calculateTotal()"></td>
                                     <td>0</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="6" style="text-align:right">ALL</td>
-                                    <td id="total">0</td>
+                                    <td colspan="2" style="text-align:right">Total</td>
+                                    <td id="total1">0</td>
+                                    <td colspan="2" style="text-align:right">Total</td>
+                                    <td id="total2">0</td>
+                                    <td id="finalTotal">0</td>
                                 </tr>
                             </table>
                             
@@ -295,6 +355,7 @@
         </button>
     </div>
 
+    <script src="ticket.js"></script>
 
     <!-- jequery plugins -->
     <script src="assets/js/jquery.js"></script>
@@ -317,6 +378,8 @@
 
     <!-- main-js -->
     <script src="assets/js/script.js"></script>
+
+
 
 </body><!-- End of .page_wrapper -->
 
